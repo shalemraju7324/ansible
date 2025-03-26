@@ -3,5 +3,5 @@
   connections: local
   tasks:
 - name: print the variable
-  ansible .builtin.debug:
+  ansible.builtin.debug:
     msg: "Course is Devops witj aws .Duration is 120 hrs "
