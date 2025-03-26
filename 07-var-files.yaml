@@ -1,14 +1,9 @@
-- name: VarIABLES FROM FILES
+- name: variables from files
   hosts: local
   connection: local
-  vars_prompt:
-  - name: COURSE
-    prompt: Please enter course name
-  - name: DURATION
-    prompt: please enter duration
-  - name: TRAINER
-    prompt: please enter trainer name
+  vars_files:
+  - course.yaml
   tasks:
-  - name: Print course information
+  - name: print course information
     ansible.builtin.debug:
-     msg: "Course is {{ COURSE }}, witj aws .Duration is {{DURATION}} hrs,Trainer is {{TRAINER}} "
+      msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Trainer is {{ TRAINER }}"
