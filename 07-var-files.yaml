@@ -1,8 +1,13 @@
 - name: VarIABLES FROM FILES
   hosts: local
   connection: local
-  vars_files:
-  - course.yaml
+  vars_prompt:
+  - name: COURSE
+    prompt: Please enter course name
+  - name: DURATION
+    prompt: please enter duration
+  - name: TRAINER
+    prompt: please enter trainer name
   tasks:
   - name: Print course information
     ansible.builtin.debug:
